@@ -4,6 +4,9 @@ const { v4: uuid, validate } = require("uuid");
 const port = 4001;
 const host = "localhost";
 
+const newId = uuid();
+const differentID = uuid();
+
 const parseId = (path, level) => {
     const parts = path.split("/");
     return parts[level];
@@ -14,6 +17,17 @@ const verifyPathMatch = (path, pattern) => {
     // Implement your logic
     return (
         parts.length === pattern && parts[1] === "stories" && validate(parts[2])
+    );
+};
+
+const verifyPathMatch2 = (path, pattern) => {
+    const parts = path.split("/");
+    // Implement your logic
+    return (
+        parts.length === pattern &&
+        parts[1] === "stories" &&
+        parts[2] === "tasks" &&
+        validate(parts[3])
     );
 };
 
@@ -70,18 +84,12 @@ const createStory = (req, res) => {
     });
     req.on("end", () => {
         body = JSON.parse(Buffer.concat(body));
-        const newId = uuid();
         const newStory = {
             id: newId,
             name: body.name,
             description: body.description,
             status: body.status,
-            tasks: {
-                id: newId,
-                name: body.tasks.name,
-                description: body.tasks.description,
-                status: body.tasks.status
-            }
+            tasks: {}
         };
         stories[newId] = newStory;
 
@@ -127,40 +135,134 @@ const deleteStory = (req, res) => {
     res.end();
 };
 
-const getAllSubtasks = (req, res) => {
-    // Code to return all subtasks for a story
+const getAllSubtasks = (res) => {
+    const allSubTasks = {};
+
+    for (const storyId in stories) {
+        const story = stories[storyId];
+
+        const tasksObj = story.tasks;
+
+        for (const taskId in tasksObj) {
+            const task = tasksObj[taskId];
+
+            allSubTasks[newId] = task;
+        }
+    }
+    res.writeHead(200, { "content-type": "application/json" });
+    res.end(JSON.stringify(allSubTasks));
 };
 
 const createSubtask = (req, res) => {
     // Code to create a new subtask
+
+    for (const storyId in stories) {
+        const story = stories[storyId];
+
+        const tasksObj = story.tasks;
+
+        let body = [];
+        req.on("data", (chunk) => {
+            body.push(chunk);
+        });
+        req.on("end", () => {
+            body = JSON.parse(Buffer.concat(body));
+            const newSubTask = {
+                id: differentID,
+                name: body.name,
+                description: body.description,
+                status: body.status
+            };
+            tasksObj[differentID] = newSubTask;
+
+            res.writeHead(201, { "content-type": "application/json" });
+            res.end(JSON.stringify(newSubTask));
+        });
+    }
 };
 
 const updateSubtaskStatus = (req, res) => {
     // Code to update a subtask's status
+
+    let body = [];
+    req.on("data", (chunk) => {
+        body.push(chunk);
+    });
+    req.on("end", () => {
+        body = JSON.parse(Buffer.concat(body));
+
+        for (const storyId in stories) {
+            const story = stories[storyId];
+            const tasksObj = story.tasks;
+
+            const id = parseId(req.url, 3);
+
+            if (tasksObj[id]) {
+                tasksObj[id].status = body.status;
+            }
+        }
+        res.statusCode = 204;
+        res.end();
+    });
 };
 
 const getSubtask = (req, res) => {
     // Code to update a subtask's status
+
+    for (const storyId in stories) {
+        const story = stories[storyId];
+        const tasksObj = story.tasks;
+
+        const id = parseId(req.url, 3);
+
+        const subtask = tasksObj[id];
+        res.writeHead(200, { "Content-Type": "application/json" });
+        res.end(JSON.stringify(subtask));
+    }
 };
 
 const deleteSubtask = (req, res) => {
     // Code to delete a subtask
+
+    for (const storyId in stories) {
+        const story = stories[storyId];
+        const tasksObj = story.tasks;
+
+        const id = parseId(req.url, 3);
+
+        delete tasksObj[id];
+        res.statusCode = 200;
+        res.end();
+    }
 };
 
 const server = http.createServer((req, res) => {
     // Routing logic
 
     const isPathMatch = verifyPathMatch(req.url, 3);
+
+    const isPathMatch2 = verifyPathMatch2(req.url, 4);
+
     if (req.url === "/stories" && req.method === "GET") {
         getAllStories(res);
+    } else if (req.url === "/stories/tasks" && req.method === "GET") {
+        getAllSubtasks(res);
     } else if (req.url === "/stories" && req.method === "POST") {
         createStory(req, res);
+    } else if (req.url === "/stories/tasks" && req.method === "POST") {
+        createSubtask(req, res);
     } else if (isPathMatch && req.method === "PATCH") {
         updateStoryStatus(req, res);
+    } else if (isPathMatch2 && req.method === "PATCH") {
+        updateSubtaskStatus(req, res);
     } else if (isPathMatch && req.method === "GET") {
         getStory(req, res);
+    } else if (isPathMatch2 && req.method === "GET") {
+        getSubtask(req, res);
     } else if (isPathMatch && req.method === "DELETE") {
         deleteStory(req, res);
+    } else if (isPathMatch2 && req.method === "DELETE") {
+        deleteSubtask(req, res);
     } else {
         res.writeHead(404, { "content-type": "text/plain" });
         res.end("Wrong Address");
