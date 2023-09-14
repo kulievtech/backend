@@ -1,1 +1,26 @@
-{"0171e51b-9493-4f5d-8ebd-4dfe66d31305":{"id":"0171e51b-9493-4f5d-8ebd-4dfe66d31305","companyName":"Neftlix","recruiterName":"Alex Johnson","position":"Staff Engineer","appliedDate":"09/12/2023","status":"Initial Call"},"f6653b29-c9c8-4adb-9eb8-bf24d09d0f53":{"id":"f6653b29-c9c8-4adb-9eb8-bf24d09d0f53","companyName":"Meta","recruiterName":"Smith Gordon","position":"Senior Software Engineer","appliedDate":"08/05/2023","status":"Offer"},"4f277a88-c0ca-44f9-a2a6-9d4ced48cdaf":{"id":"4f277a88-c0ca-44f9-a2a6-9d4ced48cdaf","companyName":"Google","recruiterName":"Anthony Williams","position":"Junior Front End Developer","appliedDate":"08/25/2023","status":"Not Selected"}}
+{
+    "0171e51b-9493-4f5d-8ebd-4dfe66d31305": {
+        "id": "0171e51b-9493-4f5d-8ebd-4dfe66d31305",
+        "companyName": "Neftlix",
+        "recruiterName": "Alex Johnson",
+        "position": "Staff Engineer",
+        "appliedDate": "09/12/2023",
+        "status": "Initial Call"
+    },
+    "f6653b29-c9c8-4adb-9eb8-bf24d09d0f53": {
+        "id": "f6653b29-c9c8-4adb-9eb8-bf24d09d0f53",
+        "companyName": "Meta",
+        "recruiterName": "Smith Gordon",
+        "position": "Senior Software Engineer",
+        "appliedDate": "08/05/2023",
+        "status": "Offer"
+    },
+    "4f277a88-c0ca-44f9-a2a6-9d4ced48cdaf": {
+        "id": "4f277a88-c0ca-44f9-a2a6-9d4ced48cdaf",
+        "companyName": "Google",
+        "recruiterName": "Anthony Williams",
+        "position": "Junior Front End Developer",
+        "appliedDate": "08/25/2023",
+        "status": "Not Selected"
+    }
+}

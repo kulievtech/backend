@@ -135,6 +135,29 @@ const deleteStory = (req, res) => {
     res.end();
 };
 
+// {
+// "uuid-story-1": {
+//     id: "uuid-story-1",
+//     name: "Story 1",
+//     description: "Description for Story 1",
+//     status: "Todo", // "Todo", "InProgress", "InQA", "Done"
+//     tasks: {
+//         "uuid-task-1": {
+//             id: "uuid-task-1",
+//             name: "Sub-task 1",
+//             description: "Description for Sub-task 1",
+//             status: "Todo" // "Todo", "InProgress", "Done"
+//         },
+//         "uuid-task-2": {
+//             id: "uuid-task-2",
+//             name: "Sub-task 2",
+//             description: "Description for Sub-task 2",
+//             status: "InProgress" // "Todo", "InProgress", "Done"
+//         }
+//     }
+// },
+//}
+
 const getAllSubtasks = (res) => {
     const allSubTasks = {};
 
