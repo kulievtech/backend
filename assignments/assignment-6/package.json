@@ -1,0 +1,17 @@
+{
+    "name": "car-rental-fleet-management-system",
+    "version": "1.0.0",
+    "description": "Dealership management system",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "Tohir",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2",
+        "uuid": "^9.0.1"
+    },
+    "type": "module"
+}
