@@ -8,7 +8,7 @@ app.use(express.json());
 
 const PORT = 4040;
 
-app.use("/cars", carRouterRouter);
+app.use("/cars", carRouter);
 app.use("/maintenances", maintenanceRouter);
 app.use("/rentals", rentalRouter);
 
