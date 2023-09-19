@@ -12,4 +12,4 @@ class ValidationMiddleware {
     };
 }
 
-export const ValidationMiddleware = new ValidationMiddleware();
+export const validationMiddleware = new ValidationMiddleware();

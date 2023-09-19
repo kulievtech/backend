@@ -1,12 +1,9 @@
-// import { employees } from "../employees.json";
-
 import { v4 as uuid } from "uuid";
 import fs from "fs";
-const employeesData = require("../employees.json");
 
 class EmployeeService {
     readParseAll() {
-        const content = fs.readFileSync(employeesData, "utf-8");
+        const content = fs.readFileSync("../employees.json", "utf-8");
 
         const parsedData = JSON.parse(content);
 
@@ -15,7 +12,7 @@ class EmployeeService {
     }
 
     updateAll(data) {
-        fs.writeFileSync(employeesData, JSON.stringify(data));
+        fs.writeFileSync("../employees.json", JSON.stringify(data));
     }
 
     getAllEmployees() {
