@@ -12,17 +12,11 @@
             "amount": 12000,
             "date": "05/12/2020"
         },
-        "73733092-382b-4a46-a545-3533239641dd": {
-            "id": "73733092-382b-4a46-a545-3533239641dd",
-            "source": "Gambling",
-            "amount": 2000,
-            "date": "06/20/2020"
-        },
-        "e657b25c-04fe-4bfd-b3f7-a3e46f7790c6": {
-            "id": "e657b25c-04fe-4bfd-b3f7-a3e46f7790c6",
-            "source": "Loan",
-            "amount": 500,
-            "date": "01/20/2001"
+        "5d8ad770-afdb-4bde-a04e-b6321302a482": {
+            "id": "5d8ad770-afdb-4bde-a04e-b6321302a482",
+            "source": "Lottery",
+            "amount": 7500,
+            "date": "03/26/2015"
         }
     }
 }
