@@ -1,5 +1,4 @@
 import { incomesService } from "../services/income.service.js";
-import fs from "fs";
 
 class IncomesController {
     getAllIncomes(req, res) {
