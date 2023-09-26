@@ -1,0 +1,22 @@
+{
+    "authors": {
+        "authorUuid1": {
+            "id": "authorUuid1",
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "bio": "Specializes in JavaScript and Web Development."
+        },
+        "d6266bbe-6914-4a76-87f7-950311c65881": {
+            "id": "d6266bbe-6914-4a76-87f7-950311c65881",
+            "name": "Smith Anderson",
+            "email": "smith.anderson@example.com",
+            "bio": "Specializes in C++ and Full-Stack Development."
+        },
+        "d8f0e30b-129f-49c4-ac8d-7e2b01499900": {
+            "id": "d8f0e30b-129f-49c4-ac8d-7e2b01499900",
+            "name": "Alexander Williams",
+            "email": "alexander.williams@example.com",
+            "bio": "Specializes in Swift and Mobile Development."
+        }
+    }
+}

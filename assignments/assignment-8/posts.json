@@ -1,0 +1,36 @@
+{
+    "posts": {
+        "b203e709-916f-48ce-8708-ccaf89b6e720": {
+            "id": "b203e709-916f-48ce-8708-ccaf89b6e720",
+            "title": "Understanding Python",
+            "content": "Python is a high-level, object-oriented programming language...",
+            "authorId": "authorUuid2",
+            "tagIds": ["tagUuid5", "tagUuid3"],
+            "createdDate": "02/22/2019"
+        },
+        "d77d939e-b622-43ab-b0b6-73c30accddd6": {
+            "id": "d77d939e-b622-43ab-b0b6-73c30accddd6",
+            "title": "Understanding Go",
+            "content": "Go is a high-level, object-oriented programming language...",
+            "authorId": "authorUuid8",
+            "tagIds": ["tagUuid15", "tagUuid23"],
+            "createdDate": "05/30/1998"
+        },
+        "66b3bcbb-acf9-4a31-8ce2-70c6609c49bc": {
+            "id": "66b3bcbb-acf9-4a31-8ce2-70c6609c49bc",
+            "title": "Understanding JavaScript",
+            "content": "JavaScript is a high-level, object-oriented programming language...",
+            "authorId": "authorUuid1",
+            "tagIds": ["tagUuid1", "tagUuid2"],
+            "createdDate": "09/22/2023"
+        },
+        "edb9cb9a-d2e7-4b53-a7c8-4a0b0e3e3ee5": {
+            "id": "edb9cb9a-d2e7-4b53-a7c8-4a0b0e3e3ee5",
+            "title": "Understanding C++",
+            "content": "C++ is a high-level, object-oriented programming language...",
+            "authorId": "authorUuid1",
+            "tagIds": ["tagUuid1", "tagUuid2"],
+            "createdDate": "05/30/2021"
+        }
+    }
+}

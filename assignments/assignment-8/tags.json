@@ -1,0 +1,19 @@
+{
+    "tags": {
+        "344813e4-de57-429e-89f3-a82c37109aa9": {
+            "id": "344813e4-de57-429e-89f3-a82c37109aa9",
+            "name": "C++",
+            "description": "Posts related to C++ programming language."
+        },
+        "f64b8db1-5a25-4f7f-9abd-de18c912a746": {
+            "id": "f64b8db1-5a25-4f7f-9abd-de18c912a746",
+            "name": "GO",
+            "description": "Posts related to GO programming language."
+        },
+        "1b4af9a1-c6e1-49eb-aa7c-b6249f0c204a": {
+            "id": "1b4af9a1-c6e1-49eb-aa7c-b6249f0c204a",
+            "name": "Swift",
+            "description": "Posts related to Swift programming language."
+        }
+    }
+}
